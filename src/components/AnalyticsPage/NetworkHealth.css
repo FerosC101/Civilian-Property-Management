@@ -1,0 +1,122 @@
+.network-health-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.network-health-header {
+    background: #6b7280;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.network-health-content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.network-diagram {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 12px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.network-diagram svg {
+    width: 160px;
+    height: 100px;
+}
+
+.network-status-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+.network-status-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.network-status-item.active {
+    background: #f0fdf4;
+    color: #16a34a;
+}
+
+.network-status-item.warning {
+    background: #fefce8;
+    color: #ca8a04;
+}
+
+.network-status-item.offline {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.status-icon {
+    font-weight: bold;
+    font-size: 10px;
+    width: 14px;
+    height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.network-status-item.active .status-icon {
+    background: #16a34a;
+    color: white;
+}
+
+.network-status-item.warning .status-icon {
+    background: #ca8a04;
+    color: white;
+}
+
+.network-status-item.offline .status-icon {
+    background: #dc2626;
+    color: white;
+}
+
+.status-text {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .network-health-content {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .network-diagram svg {
+        width: 140px;
+        height: 80px;
+    }
+
+    .network-status-item {
+        font-size: 11px;
+        padding: 5px 8px;
+    }
+}

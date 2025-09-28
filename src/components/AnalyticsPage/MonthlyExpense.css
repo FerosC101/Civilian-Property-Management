@@ -1,0 +1,193 @@
+.monthly-expense-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.monthly-expense-header {
+    background: #6b7280;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.monthly-expense-content {
+    padding: 12px;
+    height: calc(100% - 50px);
+    box-sizing: border-box;
+}
+
+.expense-layout {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.expense-chart {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+}
+
+.expense-details {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+}
+
+.expense-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 8px;
+    height: 100%;
+}
+
+.expense-section {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.asset-section {
+    grid-column: span 2;
+    text-align: center;
+    background: #e0f2fe;
+    border-color: #0ea5e9;
+    padding: 10px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-title {
+    font-size: 11px;
+    font-weight: 600;
+    color: #374151;
+    margin: 0 0 4px 0;
+    text-align: center;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.section-title.maintenance {
+    color: #92400e;
+}
+
+.section-title.utilities {
+    color: #1e40af;
+}
+
+.section-title.asset {
+    color: #0ea5e9;
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+.expense-items {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+}
+
+.expense-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    line-height: 1.2;
+    padding: 1px 0;
+}
+
+.item-label {
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.item-value {
+    color: #111827;
+    font-weight: 600;
+    font-family: monospace;
+}
+
+.asset-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0ea5e9;
+    margin-top: 2px;
+    font-family: monospace;
+}
+
+/* Make pie chart smaller */
+.expense-chart svg {
+    width: 80px;
+    height: 80px;
+}
+
+/* Pie chart hover effects */
+.expense-chart svg path {
+    transition: opacity 0.2s ease;
+}
+
+.expense-chart svg path:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .expense-layout {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .expense-chart {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .expense-grid {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .asset-section {
+        grid-column: span 1;
+        padding: 8px;
+    }
+
+    .monthly-expense-content {
+        padding: 10px;
+    }
+
+    .section-title {
+        font-size: 10px;
+    }
+
+    .expense-item {
+        font-size: 9px;
+    }
+
+    .asset-value {
+        font-size: 16px;
+    }
+
+    .expense-chart svg {
+        width: 70px;
+        height: 70px;
+    }
+}

@@ -2,7 +2,12 @@ import React from "react";
 import "./Sidebar.css";
 import { FaHome, FaTv, FaChartBar, FaBell, FaUserCog, FaUser } from "react-icons/fa";
 
-const Sidebar: React.FC = () => {
+interface SidebarProps {
+    currentPage: string;
+    setCurrentPage: (page: string) => void;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ currentPage, setCurrentPage }) => {
     return (
         <div className="sidebar">
             {/* Header */}
@@ -18,7 +23,10 @@ const Sidebar: React.FC = () => {
 
             {/* Menu */}
             <ul className="sidebar-menu">
-                <li className="active">
+                <li
+                    className={currentPage === 'home' ? 'active' : ''}
+                    onClick={() => setCurrentPage('home')}
+                >
                     <FaHome />
                     <span>Home Page</span>
                 </li>
@@ -26,7 +34,10 @@ const Sidebar: React.FC = () => {
                     <FaTv />
                     <span>Room Monitoring</span>
                 </li>
-                <li>
+                <li
+                    className={currentPage === 'analytics' ? 'active' : ''}
+                    onClick={() => setCurrentPage('analytics')}
+                >
                     <FaChartBar />
                     <span>Dashboard & Analytics</span>
                 </li>
@@ -56,5 +67,4 @@ const Sidebar: React.FC = () => {
     );
 };
 
-// @ts-ignore
 export default Sidebar;

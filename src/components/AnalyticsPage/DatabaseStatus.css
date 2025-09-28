@@ -1,0 +1,290 @@
+.database-status-card {
+    background: #6b7280;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.database-status-header {
+    background: #6b7280;
+    color: white;
+    padding: 16px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.database-status-content {
+    padding: 16px;
+    background: #6b7280;
+    color: white;
+}
+
+.db-overview {
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.db-status {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.status-indicator.online {
+    background: #10b981;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+}
+
+.status-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.status-label {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+}
+
+.status-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+}
+
+.uptime-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-left: auto;
+}
+
+.uptime-label {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    text-align: right;
+}
+
+.uptime-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: #10b981;
+    text-align: right;
+}
+
+.db-section {
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.db-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 8px;
+    padding-bottom: 0;
+}
+
+.section-header {
+    margin-bottom: 8px;
+}
+
+.section-title {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.connection-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.connection-bar {
+    flex: 1;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.connection-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #10b981, #34d399);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.connection-stats {
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: monospace;
+}
+
+.current {
+    color: #10b981;
+}
+
+.separator {
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0 2px;
+}
+
+.max {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.metrics {
+    display: flex;
+    gap: 12px;
+}
+
+.metric-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    flex: 1;
+}
+
+.metric-label {
+    font-size: 9px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+}
+
+.metric-value {
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    font-family: monospace;
+}
+
+.storage-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.storage-stats {
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: monospace;
+}
+
+.storage-used {
+    color: #10b981;
+}
+
+.storage-separator {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.storage-total {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.storage-bar {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.storage-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #10b981, #34d399);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.db-footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.footer-label {
+    font-size: 9px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+}
+
+.footer-value {
+    font-size: 11px;
+    font-weight: 600;
+    font-family: monospace;
+}
+
+.footer-value.response-time {
+    color: #10b981;
+}
+
+.footer-value.queries {
+    color: #60a5fa;
+}
+
+@media (max-width: 768px) {
+    .database-status-content {
+        padding: 12px;
+    }
+
+    .db-status {
+        gap: 8px;
+    }
+
+    .status-value {
+        font-size: 12px;
+    }
+
+    .uptime-value {
+        font-size: 12px;
+    }
+
+    .metrics {
+        gap: 8px;
+    }
+
+    .metric-value {
+        font-size: 11px;
+    }
+
+    .storage-stats {
+        font-size: 10px;
+    }
+
+    .footer-value {
+        font-size: 10px;
+    }
+}

@@ -1,0 +1,76 @@
+/* Vertical container - stacked cards */
+.status-cards-vertical-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Each card styled to match the reference design */
+.status-card-vertical {
+    background: #6b7280; /* Gray background like in reference */
+    border: none;
+    border-radius: 12px;
+    padding: 24px 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.status-card-vertical:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.status-title-vertical {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-value-vertical {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* Value variations - keeping white for consistency with dark background */
+.status-value-vertical.low {
+    color: #ffffff;
+}
+
+.status-value-vertical.normal {
+    color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .status-cards-vertical-container {
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .status-card-vertical {
+        padding: 16px;
+        min-height: 80px;
+        flex: 1;
+    }
+
+    .status-title-vertical {
+        font-size: 14px;
+    }
+
+    .status-value-vertical {
+        font-size: 20px;
+    }
+}
