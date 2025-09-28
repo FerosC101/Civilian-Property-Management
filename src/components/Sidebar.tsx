@@ -30,7 +30,10 @@ const Sidebar: React.FC<SidebarProps> = ({ currentPage, setCurrentPage }) => {
                     <FaHome />
                     <span>Home Page</span>
                 </li>
-                <li>
+                <li
+                    className={currentPage === 'monitoring' ? 'active' : ''}
+                    onClick={() => setCurrentPage('monitoring')}
+                >
                     <FaTv />
                     <span>Room Monitoring</span>
                 </li>
@@ -41,11 +44,17 @@ const Sidebar: React.FC<SidebarProps> = ({ currentPage, setCurrentPage }) => {
                     <FaChartBar />
                     <span>Dashboard & Analytics</span>
                 </li>
-                <li>
+                <li
+                    className={currentPage === 'alerts' ? 'active' : ''}
+                    onClick={() => setCurrentPage('alerts')}
+                >
                     <FaBell />
                     <span>Alerts and System Control</span>
                 </li>
-                <li>
+                <li
+                    className={currentPage === 'admin' ? 'active' : ''}
+                    onClick={() => setCurrentPage('admin')}
+                >
                     <FaUserCog />
                     <span>Admin Management and Facility Monitor</span>
                 </li>
