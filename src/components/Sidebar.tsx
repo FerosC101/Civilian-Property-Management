@@ -62,7 +62,11 @@ const Sidebar: React.FC<SidebarProps> = ({ currentPage, setCurrentPage }) => {
 
             {/* Footer - User Profile */}
             <div className="sidebar-footer">
-                <div className="user-profile">
+                <div
+                    className={`user-profile ${currentPage === 'account' ? 'active' : ''}`}
+                    onClick={() => setCurrentPage('account')}
+                    style={{ cursor: 'pointer' }}
+                >
                     <div className="user-avatar">
                         <FaUser />
                     </div>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Dashboard from "./components/pages/Dashboard";
 import Analytics from "./components/pages/Analytics";
 import AlertsSystemControl from "./components/pages/AlertSystemControl";
+import AccountSettings from "./components/pages/AccountSetting";
 
 const App: React.FC = () => {
     const [currentPage, setCurrentPage] = useState('home');
@@ -18,6 +19,8 @@ const App: React.FC = () => {
                 return <AlertsSystemControl currentPage={currentPage} setCurrentPage={setCurrentPage} />;
             case 'admin':
                 return <div>Admin Management Page - Coming Soon</div>;
+            case 'account':
+                return <AccountSettings currentPage={currentPage} setCurrentPage={setCurrentPage} />;
             default:
                 return <Dashboard currentPage={currentPage} setCurrentPage={setCurrentPage} />;
         }

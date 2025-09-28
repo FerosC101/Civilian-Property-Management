@@ -191,3 +191,50 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+/* Add this to your existing Sidebar.css file */
+
+/* Enhanced user profile styling */
+.user-profile {
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.user-profile:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    transform: translateY(-1px);
+}
+
+.user-profile.active {
+    background-color: rgba(59, 130, 246, 0.2);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.user-profile.active .user-name {
+    color: #60a5fa;
+}
+
+/* Enhance existing menu item active state if needed */
+.sidebar-menu li.active {
+    background-color: rgba(59, 130, 246, 0.15);
+    border-left: 3px solid #3b82f6;
+    padding-left: 13px;
+}
+
+.sidebar-menu li:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    transform: translateX(2px);
+}
+
+/* Smooth transitions for all clickable elements */
+.sidebar-menu li,
+.user-profile {
+    transition: all 0.2s ease;
+}
+
+/* Add a subtle shadow to active elements */
+.sidebar-menu li.active,
+.user-profile.active {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
