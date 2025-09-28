@@ -48,7 +48,7 @@ const Sidebar: React.FC = () => {
                     </div>
                     <div className="user-info">
                         <p className="user-name">John Doe</p>
-                        <p className="user-role">Administrator</p>
+                        <p className="user-role">Account Type</p>
                     </div>
                 </div>
             </div>

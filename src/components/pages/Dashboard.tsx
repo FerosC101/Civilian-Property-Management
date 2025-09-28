@@ -4,6 +4,10 @@ import ProfileHeader from "../ProfileHeader";
 import RoomBooking from "../RoomBooking";
 import BookingDetails from "../BookingDetails";
 import StatusIndicators from "../StatusIndicators";
+import CityOverview from "../Quickbuttons/CityOverview";
+import NewsUpdates from "../Quickbuttons/NewsUpdates";
+import About from "../Quickbuttons/About";
+import IoTSubscriptionLogo from "../Quickbuttons/IoTSubscriptionLogo";
 
 const Dashboard: React.FC = () => {
     const handleQuickBook = () => {
@@ -30,22 +34,39 @@ const Dashboard: React.FC = () => {
                         />
                     </div>
 
-                    {/* Main content layout - Room Booking on left, Status Indicators on right */}
-                    <div className="flex">
-                        {/* Left side - Room Booking and Booking Details */}
-                        <div className="flex flex-col">
+                    {/* Main content area - Left: Booking Components Stacked, Right: Status Indicators */}
+                    <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start' }}>
+                        {/* Left side - Room Booking and Booking Details stacked vertically */}
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', flexShrink: 0 }}>
                             <RoomBooking />
                             <BookingDetails />
                         </div>
 
-                        {/* Right side - Status Indicators */}
-                        <StatusIndicators />
+                        {/* Right side - Status Indicators, Additional Components, and Logo */}
+                        <div style={{ flex: '1', minWidth: '0', display: 'flex', flexDirection: 'column', gap: '24px' }}>
+                            {/* Status Indicators */}
+                            <StatusIndicators />
+
+                            {/* Bottom section - Cards column and Logo side by side */}
+                            <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start' }}>
+                                {/* Left side - All three cards stacked vertically */}
+                                <div style={{ flex: '1', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                                    <About />
+                                    <CityOverview />
+                                    <NewsUpdates />
+                                </div>
+
+                                {/* Right side - Large IoT Logo */}
+                                <div style={{ flexShrink: 0 }}>
+                                    <IoTSubscriptionLogo />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     );
 };
-
 
 export default Dashboard;
