@@ -2,6 +2,8 @@ import React from "react";
 import Sidebar from "../Sidebar";
 import ProfileHeader from "../ProfileHeader";
 import RoomBooking from "../RoomBooking";
+import BookingDetails from "../BookingDetails";
+import StatusIndicators from "../StatusIndicators";
 
 const Dashboard: React.FC = () => {
     const handleQuickBook = () => {
@@ -28,9 +30,16 @@ const Dashboard: React.FC = () => {
                         />
                     </div>
 
-                    {/* Room Booking Section */}
-                    <div className="mb-6">
-                        <RoomBooking />
+                    {/* Main content layout - Room Booking on left, Status Indicators on right */}
+                    <div className="flex">
+                        {/* Left side - Room Booking and Booking Details */}
+                        <div className="flex flex-col">
+                            <RoomBooking />
+                            <BookingDetails />
+                        </div>
+
+                        {/* Right side - Status Indicators */}
+                        <StatusIndicators />
                     </div>
                 </div>
             </div>

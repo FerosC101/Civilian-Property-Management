@@ -1,0 +1,141 @@
+/* StatusIndicators.css */
+.status-indicators-container {
+    flex: 1;
+    margin-left: 24px; /* Equal margin from room booking */
+    margin-right: 24px; /* Equal margin to screen edge */
+}
+
+.indicators-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    height: fit-content;
+}
+
+.indicator-card {
+    border-radius: 12px;
+    padding: 20px;
+    border: 2px solid;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 160px;
+    position: relative;
+}
+
+/* IoT Mesh - Blue */
+.iot-mesh {
+    background-color: #dbeafe;
+    border-color: #93c5fd;
+    color: #1e40af;
+}
+
+.iot-mesh .card-icon {
+    color: #3b82f6;
+}
+
+/* Flood Monitor - Red */
+.flood-monitor {
+    background-color: #fecaca;
+    border-color: #f87171;
+    color: #b91c1c;
+}
+
+.flood-monitor .card-icon {
+    color: #dc2626;
+}
+
+/* Crowd Flow - Purple */
+.crowd-flow {
+    background-color: #e9d5ff;
+    border-color: #c084fc;
+    color: #7c3aed;
+}
+
+.crowd-flow .card-icon {
+    color: #8b5cf6;
+}
+
+/* Building Status - Orange */
+.building-status {
+    background-color: #fed7aa;
+    border-color: #fb923c;
+    color: #c2410c;
+}
+
+.building-status .card-icon {
+    color: #ea580c;
+}
+
+.card-icon {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 16px 0;
+    line-height: 1.2;
+}
+
+.card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+}
+
+.status-item {
+    display: flex;
+    justify-content: center;
+}
+
+.status-label {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .status-indicators-container {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 24px;
+    }
+
+    .indicators-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .indicator-card {
+        min-height: 140px;
+        padding: 16px;
+    }
+
+    .card-title {
+        font-size: 16px;
+    }
+
+    .status-label {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .indicators-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .indicator-card {
+        min-height: 120px;
+    }
+}
