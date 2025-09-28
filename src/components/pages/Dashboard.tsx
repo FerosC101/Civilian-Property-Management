@@ -1,10 +1,42 @@
-const Dashboard = () => {
+import React from "react";
+import Sidebar from "../Sidebar";
+import ProfileHeader from "../ProfileHeader";
+import RoomBooking from "../RoomBooking";
+
+const Dashboard: React.FC = () => {
+    const handleQuickBook = () => {
+        console.log("Quick Book clicked");
+    };
+
     return (
-        <div className="flex-1 p-6">
-        <h1 className="text-2xl font-bold text-gray-800">Dashboard</h1>
-            <p className="text-gray-500 mt-2">This is the dashboard page.</p>
-    </div>
-);
+        <div className="flex h-screen">
+            {/* Sidebar */}
+            <Sidebar />
+
+            {/* Dashboard Content */}
+            <div className="flex-1 bg-orange-50 overflow-auto" style={{ marginLeft: '250px' }}>
+                {/* Content container with proper spacing from sidebar */}
+                <div className="p-6 pt-12">
+                    {/* Profile Header positioned at top with margin */}
+                    <div className="mb-6">
+                        <ProfileHeader
+                            userName="Nash Ayelet"
+                            userRole="Administrator"
+                            building="Residential Privilege"
+                            unit="Building A, Unit 205"
+                            onQuickBook={handleQuickBook}
+                        />
+                    </div>
+
+                    {/* Room Booking Section */}
+                    <div className="mb-6">
+                        <RoomBooking />
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 };
+
 
 export default Dashboard;
