@@ -11,7 +11,6 @@ interface ProfileHeaderProps {
 
 const ProfileHeader: React.FC<ProfileHeaderProps> = ({
                                                          userName,
-                                                         userRole = "Administrator",
                                                          building = "Residential Privilege",
                                                          unit = "Building A, Unit 205",
                                                          onQuickBook

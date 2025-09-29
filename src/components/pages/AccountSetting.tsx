@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import {
     FaUser,
     FaCreditCard,
@@ -17,10 +17,12 @@ import {
 import "./AccountSetting.css";
 
 interface AccountSettingsProps {
-    onClose: () => void;
+    onClose: () => void,
+    currentPage?: string,
+    setCurrentPage?: (value: (((prevState: string) => string) | string)) => void
 }
 
-const AccountSettings: React.FC<AccountSettingsProps> = ({ onClose }) => {
+const AccountSettings: React.FC<AccountSettingsProps> = ({onClose,}) => {
     const [userData] = useState({
         fullName: "Nash Ayelet",
         email: "nash.ayelet@civilian.com",
@@ -68,7 +70,7 @@ const AccountSettings: React.FC<AccountSettingsProps> = ({ onClose }) => {
                         className="account-close-button"
                         type="button"
                     >
-                        <FaTimes />
+                        <FaTimes/>
                     </button>
                 </div>
 
@@ -82,7 +84,7 @@ const AccountSettings: React.FC<AccountSettingsProps> = ({ onClose }) => {
                             <div className="account-section">
                                 <div className="section-title">
                                     <div className="section-icon">
-                                        <FaUser />
+                                        <FaUser/>
                                     </div>
                                     Profile Information
                                 </div>
@@ -113,26 +115,26 @@ const AccountSettings: React.FC<AccountSettingsProps> = ({ onClose }) => {
                             <div className="account-section">
                                 <div className="section-title">
                                     <div className="section-icon">
-                                        <FaCog />
+                                        <FaCog/>
                                     </div>
                                     Account Settings
                                 </div>
 
                                 <div className="settings-grid">
                                     <button className="settings-button">
-                                        <FaEnvelope />
+                                        <FaEnvelope/>
                                         Change Email
                                     </button>
                                     <button className="settings-button primary">
-                                        <FaShieldAlt />
+                                        <FaShieldAlt/>
                                         Enable 2FA
                                     </button>
                                     <button className="settings-button">
-                                        <FaLock />
+                                        <FaLock/>
                                         Change Password
                                     </button>
                                     <button className="settings-button">
-                                        <FaMobileAlt />
+                                        <FaMobileAlt/>
                                         Devices
                                     </button>
                                 </div>
@@ -140,7 +142,7 @@ const AccountSettings: React.FC<AccountSettingsProps> = ({ onClose }) => {
                                 <div className="contact-info">
                                     <div className="contact-item">
                                         <div className="contact-icon">
-                                            <FaEnvelope />
+                                            <FaEnvelope/>
                                         </div>
                                         <div className="contact-details">
                                             <h4>Email Address</h4>
@@ -149,7 +151,7 @@ const AccountSettings: React.FC<AccountSettingsProps> = ({ onClose }) => {
                                     </div>
                                     <div className="contact-item">
                                         <div className="contact-icon">
-                                            <FaPhone />
+                                            <FaPhone/>
                                         </div>
                                         <div className="contact-details">
                                             <h4>Phone Number</h4>
@@ -166,7 +168,7 @@ const AccountSettings: React.FC<AccountSettingsProps> = ({ onClose }) => {
                             <div className="account-section">
                                 <div className="section-title">
                                     <div className="section-icon">
-                                        <FaHome />
+                                        <FaHome/>
                                     </div>
                                     Property Information
                                 </div>
@@ -187,18 +189,23 @@ const AccountSettings: React.FC<AccountSettingsProps> = ({ onClose }) => {
                                 </div>
 
                                 <div className="gallery-section">
-                                    <h4 style={{ margin: '0 0 12px 0', fontSize: '14px', fontWeight: '600', color: '#1e293b' }}>
+                                    <h4 style={{
+                                        margin: '0 0 12px 0',
+                                        fontSize: '14px',
+                                        fontWeight: '600',
+                                        color: '#1e293b'
+                                    }}>
                                         Property Gallery
                                     </h4>
                                     <div className="gallery-grid">
                                         <div className="gallery-item">
-                                            <FaCamera />
+                                            <FaCamera/>
                                         </div>
                                         <div className="gallery-item">
-                                            <FaCamera />
+                                            <FaCamera/>
                                         </div>
                                         <div className="gallery-item">
-                                            <FaCamera />
+                                            <FaCamera/>
                                         </div>
                                     </div>
                                 </div>
@@ -208,7 +215,7 @@ const AccountSettings: React.FC<AccountSettingsProps> = ({ onClose }) => {
                             <div className="account-section">
                                 <div className="section-title">
                                     <div className="section-icon">
-                                        <FaCreditCard />
+                                        <FaCreditCard/>
                                     </div>
                                     Subscription Plan
                                 </div>
@@ -262,14 +269,19 @@ const AccountSettings: React.FC<AccountSettingsProps> = ({ onClose }) => {
                                         color: 'white',
                                         fontSize: '20px'
                                     }}>
-                                        <FaShieldAlt />
+                                        <FaShieldAlt/>
                                     </div>
                                     <div>
-                                        <h4 style={{ margin: '0 0 8px 0', fontSize: '16px', fontWeight: '600', color: '#1e293b' }}>
+                                        <h4 style={{
+                                            margin: '0 0 8px 0',
+                                            fontSize: '16px',
+                                            fontWeight: '600',
+                                            color: '#1e293b'
+                                        }}>
                                             IoT Device Registration
                                         </h4>
-                                        <div style={{ display: 'flex', gap: '4px' }}>
-                                            {Array.from({ length: 8 }, (_, i) => (
+                                        <div style={{display: 'flex', gap: '4px'}}>
+                                            {Array.from({length: 8}, (_, i) => (
                                                 <div
                                                     key={i}
                                                     style={{
@@ -293,7 +305,7 @@ const AccountSettings: React.FC<AccountSettingsProps> = ({ onClose }) => {
                         <div className="account-section">
                             <div className="billing-section">
                                 <div className="billing-icon">
-                                    <FaCreditCard />
+                                    <FaCreditCard/>
                                 </div>
                                 <div className="billing-content">
                                     <h3>Subscription & Billing</h3>
@@ -301,7 +313,7 @@ const AccountSettings: React.FC<AccountSettingsProps> = ({ onClose }) => {
                                     <div className="billing-detail">Card ending in: •••• {userData.cardLast4}</div>
                                     <div className="billing-detail">Next billing: November 15, 2024</div>
                                     <div className="card-preview">
-                                        {Array.from({ length: 16 }, (_, i) => (
+                                        {Array.from({length: 16}, (_, i) => (
                                             <div key={i} className="card-dot"></div>
                                         ))}
                                     </div>
@@ -314,12 +326,12 @@ const AccountSettings: React.FC<AccountSettingsProps> = ({ onClose }) => {
                             <div className="device-section">
                                 <div className="device-info">
                                     <div className="device-icon">
-                                        <FaShieldAlt />
+                                        <FaShieldAlt/>
                                     </div>
                                     <div className="device-text">Device ID: {userData.deviceId}</div>
                                 </div>
                                 <button className="device-edit" type="button">
-                                    <FaEdit />
+                                    <FaEdit/>
                                 </button>
                             </div>
                         </div>
@@ -328,19 +340,19 @@ const AccountSettings: React.FC<AccountSettingsProps> = ({ onClose }) => {
                     {/* Action Buttons */}
                     <div className="action-buttons">
                         <button className="action-button secondary">
-                            <FaCog style={{ marginRight: '8px' }} />
+                            <FaCog style={{marginRight: '8px'}}/>
                             General Settings
                         </button>
                         <button className="action-button secondary">
-                            <FaPhone style={{ marginRight: '8px' }} />
+                            <FaPhone style={{marginRight: '8px'}}/>
                             Contact Support
                         </button>
                         <button className="action-button primary">
-                            <FaEye style={{ marginRight: '8px' }} />
+                            <FaEye style={{marginRight: '8px'}}/>
                             Switch Account
                         </button>
                         <button className="action-button danger">
-                            <FaTimes style={{ marginRight: '8px' }} />
+                            <FaTimes style={{marginRight: '8px'}}/>
                             Sign Out
                         </button>
                     </div>

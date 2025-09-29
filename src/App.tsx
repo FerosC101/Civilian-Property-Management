@@ -20,7 +20,10 @@ const App: React.FC = () => {
             case 'admin':
                 return <div>Admin Management Page - Coming Soon</div>;
             case 'account':
-                return <AccountSettings currentPage={currentPage} setCurrentPage={setCurrentPage} />;
+                return <AccountSettings currentPage={currentPage} setCurrentPage={setCurrentPage}
+                                        onClose={function (): void {
+                                            throw new Error("Function not implemented.");
+                                        }} />;
             default:
                 return <Dashboard currentPage={currentPage} setCurrentPage={setCurrentPage} />;
         }
